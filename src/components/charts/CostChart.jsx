@@ -1,0 +1,90 @@
+import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts'
+import { Card } from '../shared/Card'
+import { formatCompactCurrency } from '../../utils/formatters'
+
+const capexColors = ['#f5c451', '#c49e3c', '#e8a820', '#b88c2a', '#d4aa50']
+const headcountColors = ['#81a1ff', '#6681cc', '#9bb5ff', '#5570bb', '#aabfff']
+
+function buildData(scenarios) {
+  const maxLen = Math.max(...scenarios.map((s) => s.simulationResult.monthlyData.length))
+  return Array.from({ length: maxLen }, (_, i) => {
+    const entry = { month: i }
+    scenarios.forEach((s) => {
+      const row = s.simulationResult.monthlyData[i]
+      if (row) {
+        entry[`${s.id}-capex`] = row.cumulativeCapex
+        entry[`${s.id}-hc`] = row.cumulativeHeadcountCost
+      }
+    })
+    return entry
+  })
+}
+
+export function CostChart({ scenarios }) {
+  const data = buildData(scenarios)
+  const maxMonth = data.length - 1
+  const tickStep = maxMonth <= 12 ? 3 : 6
+  const ticks = Array.from({ length: Math.floor(maxMonth / tickStep) + 1 }, (_, i) => i * tickStep)
+
+  return (
+    <Card className="p-5">
+      <h3 className="mb-4 text-base font-semibold text-ink">Cumulative CapEx &amp; Headcount Cost</h3>
+      <div className="h-80">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
+            <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+            <XAxis
+              dataKey="month"
+              stroke="#7f9ab2"
+              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              tickFormatter={(v) => `M${v}`}
+              ticks={ticks}
+            />
+            <YAxis
+              stroke="#7f9ab2"
+              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              tickFormatter={formatCompactCurrency}
+              width={52}
+            />
+            <Tooltip
+              contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+              labelFormatter={(v) => `Month ${v}`}
+              formatter={(value, name) => [formatCompactCurrency(value), name]}
+            />
+            <Legend wrapperStyle={{ fontSize: 12 }} />
+            {scenarios.flatMap((s, i) => [
+              <Line
+                key={`${s.id}-capex`}
+                type="monotone"
+                dataKey={`${s.id}-capex`}
+                name={scenarios.length > 1 ? `${s.name} CapEx` : 'CapEx'}
+                stroke={capexColors[i % capexColors.length]}
+                strokeWidth={2}
+                dot={false}
+              />,
+              <Line
+                key={`${s.id}-hc`}
+                type="monotone"
+                dataKey={`${s.id}-hc`}
+                name={scenarios.length > 1 ? `${s.name} Headcount` : 'Headcount'}
+                stroke={headcountColors[i % headcountColors.length]}
+                strokeWidth={2}
+                strokeDasharray="4 2"
+                dot={false}
+              />,
+            ])}
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+    </Card>
+  )
+}
