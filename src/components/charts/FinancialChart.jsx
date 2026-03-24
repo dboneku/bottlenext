@@ -11,9 +11,9 @@ import {
 import { Card } from '../shared/Card'
 import { formatCompactCurrency } from '../../utils/formatters'
 
-const revenueColors = ['#8ce99a', '#6bb878', '#a8f0b5', '#50a060', '#c0f0c8']
-const gpColors = ['#7dd3fc', '#5bb0d8', '#99deff', '#4499bb', '#bbe8ff']
-const lostColors = ['#ff8d7b', '#cc6a5e', '#ffaa9c', '#bb5045', '#ffc0b0']
+const revenueColors = ['#047857', '#065f46', '#059669', '#064e3b', '#10b981']
+const gpColors = ['#1d4ed8', '#1e40af', '#2563eb', '#1e3a8a', '#3b82f6']
+const lostColors = ['#dc2626', '#b91c1c', '#ef4444', '#991b1b', '#f87171']
 
 function buildData(scenarios) {
   const maxLen = Math.max(...scenarios.map((s) => s.simulationResult.monthlyData.length))
@@ -43,22 +43,22 @@ export function FinancialChart({ scenarios }) {
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-            <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+            <CartesianGrid stroke="#dce3eb" strokeDasharray="3 3" />
             <XAxis
               dataKey="month"
-              stroke="#7f9ab2"
-              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              stroke="#94a3b8"
+              tick={{ fill: '#64748b', fontSize: 11 }}
               tickFormatter={(v) => `M${v}`}
               ticks={ticks}
             />
             <YAxis
-              stroke="#7f9ab2"
-              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              stroke="#94a3b8"
+              tick={{ fill: '#64748b', fontSize: 11 }}
               tickFormatter={formatCompactCurrency}
               width={52}
             />
             <Tooltip
-              contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+              contentStyle={{ background: '#ffffff', border: '1px solid #dce3eb', fontSize: 12, color: '#111827' }}
               labelFormatter={(v) => `Month ${v}`}
               formatter={(value, name) => [formatCompactCurrency(value), name]}
             />

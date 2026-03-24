@@ -85,8 +85,8 @@ export function CacLtvPanel({ scenario }) {
   )
 
   const barData = [
-    { name: 'CAC', value: Math.round(cac), fill: '#ff8d7b' },
-    { name: 'LTV', value: Math.round(ltv), fill: '#8ce99a' },
+    { name: 'CAC', value: Math.round(cac), fill: '#dc2626' },
+    { name: 'LTV', value: Math.round(ltv), fill: '#047857' },
   ]
 
   const sensitivityRows = useMemo(() => buildSensitivityRows(config, cac), [config, cac])
@@ -97,15 +97,7 @@ export function CacLtvPanel({ scenario }) {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="mb-1 text-base font-semibold text-ink">
-          Customer Acquisition Cost &amp; Lifetime Value
-        </h3>
-        <p className="mb-4 text-sm text-muted">
-          Based on {formatCurrency(config.salespersonAnnualCost)}/yr rep cost,{' '}
-          {formatNumber(config.dealsPerRepPerYear)} deals/rep/yr,{' '}
-          {formatCurrency(config.averageDealValue)} avg deal value,{' '}
-          {config.customerChurnRatePct}% annual churn.
-        </p>
+        <h3 className="mb-3 text-base font-semibold text-ink">Customer Acquisition Cost &amp; Lifetime Value</h3>
 
         <div className="mb-5 grid grid-cols-4 gap-4">
           <KpiCard label="CAC" value={formatCurrency(cac)} tone="text-coral" />
@@ -129,22 +121,22 @@ export function CacLtvPanel({ scenario }) {
           <div className="h-56">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={barData} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-                <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+                <CartesianGrid stroke="#dce3eb" strokeDasharray="3 3" />
                 <XAxis
                   dataKey="name"
-                  stroke="#7f9ab2"
-                  tick={{ fill: '#7f9ab2', fontSize: 12 }}
+                  stroke="#94a3b8"
+                  tick={{ fill: '#64748b', fontSize: 12 }}
                 />
                 <YAxis
-                  stroke="#7f9ab2"
-                  tick={{ fill: '#7f9ab2', fontSize: 11 }}
+                  stroke="#94a3b8"
+                  tick={{ fill: '#64748b', fontSize: 11 }}
                   tickFormatter={(v) =>
                     Math.abs(v) >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${v}`
                   }
                   width={56}
                 />
                 <Tooltip
-                  contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+                  contentStyle={{ background: '#ffffff', border: '1px solid #dce3eb', fontSize: 12, color: '#111827' }}
                   formatter={(v, name) => [formatCurrency(v), name]}
                 />
                 <Bar dataKey="value" name="Value" radius={[6, 6, 0, 0]}>
@@ -191,15 +183,12 @@ export function CacLtvPanel({ scenario }) {
 
       {ltvCacRatio < 1 && (
         <div className="rounded-xl border border-coral/30 bg-coral/5 px-4 py-3 text-sm text-coral">
-          <strong>Warning:</strong> LTV:CAC below 1× means each hire destroys more value than it
-          creates at current deal values. Consider raising prices, improving close rates, or
-          reducing churn before scaling headcount.
+          LTV:CAC &lt; 1× — unprofitable at current deal values.
         </div>
       )}
       {ltvCacRatio >= 1 && ltvCacRatio < 3 && (
         <div className="rounded-xl border border-gold/30 bg-gold/5 px-4 py-3 text-sm text-gold">
-          <strong>Note:</strong> LTV:CAC of 1–3× is marginal. A ratio of 3× or higher is
-          generally considered healthy for scaling headcount confidently.
+          LTV:CAC 1–3× is marginal — aim for 3× before scaling headcount.
         </div>
       )}
     </div>

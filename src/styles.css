@@ -3,12 +3,11 @@
 @tailwind utilities;
 
 :root {
-  color: #dbe8f5;
+  color: #111827;
   background:
-    radial-gradient(circle at top left, rgba(129, 161, 255, 0.12), transparent 28%),
-    radial-gradient(circle at top right, rgba(245, 196, 81, 0.12), transparent 24%),
-    linear-gradient(180deg, #06131f 0%, #091a28 100%);
-  font-family: Manrope, sans-serif;
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)),
+    linear-gradient(180deg, #eef2f7 0%, #f7f9fc 100%);
+  font-family: Inter, sans-serif;
 }
 
 html,
@@ -19,23 +18,30 @@ body,
 
 body {
   margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.96)),
+    linear-gradient(180deg, #eef2f7 0%, #f7f9fc 100%);
 }
 
 * {
   box-sizing: border-box;
 }
 
+::selection {
+  background: rgba(29, 78, 216, 0.14);
+}
+
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #081521;
+  background: #f0f4f8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #21415b;
-  border: 2px solid #081521;
+  background: #cbd5e1;
+  border: 2px solid #f0f4f8;
   border-radius: 9999px;
 }

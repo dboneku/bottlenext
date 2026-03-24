@@ -104,12 +104,7 @@ export function NewProductLaunch({ scenario }) {
   return (
     <div className="space-y-6">
       <div>
-        <h3 className="mb-1 text-base font-semibold text-ink">New Product / Service Launch</h3>
-        <p className="mb-4 text-sm text-muted">
-          &ldquo;{config.launchName}&rdquo; · Launching at Month {config.launchMonth} ·{' '}
-          {formatCurrency(config.launchInvestment)} upfront · {config.launchRampMonths}-month
-          ramp to {formatNumber(config.launchUnitsPerMonth)} units/month.
-        </p>
+        <h3 className="mb-3 text-base font-semibold text-ink">New Product / Service Launch</h3>
 
         <div className="mb-5 grid grid-cols-4 gap-4">
           <KpiCard
@@ -140,35 +135,35 @@ export function NewProductLaunch({ scenario }) {
         <div className="h-64">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-              <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+              <CartesianGrid stroke="#dce3eb" strokeDasharray="3 3" />
               <XAxis
                 dataKey="month"
-                stroke="#7f9ab2"
-                tick={{ fill: '#7f9ab2', fontSize: 11 }}
+                stroke="#94a3b8"
+                tick={{ fill: '#64748b', fontSize: 11 }}
                 tickFormatter={(v) => `M${v}`}
                 ticks={ticks}
               />
               <YAxis
-                stroke="#7f9ab2"
-                tick={{ fill: '#7f9ab2', fontSize: 11 }}
+                stroke="#94a3b8"
+                tick={{ fill: '#64748b', fontSize: 11 }}
                 tickFormatter={(v) =>
                   Math.abs(v) >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${v}`
                 }
                 width={56}
               />
               <Tooltip
-                contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+                contentStyle={{ background: '#ffffff', border: '1px solid #dce3eb', fontSize: 12, color: '#111827' }}
                 labelFormatter={(v) => `Month ${v}`}
                 formatter={(v, name) => [formatCurrency(v), name]}
               />
               <Legend wrapperStyle={{ fontSize: 12 }} />
               <ReferenceLine
                 x={config.launchMonth}
-                stroke="#f59e0b"
+                stroke="#b45309"
                 strokeDasharray="4 4"
                 label={{
                   value: 'Launch',
-                  fill: '#f59e0b',
+                  fill: '#b45309',
                   fontSize: 11,
                   position: 'insideTopRight',
                 }}
@@ -176,11 +171,11 @@ export function NewProductLaunch({ scenario }) {
               {breakEvenMonth != null && (
                 <ReferenceLine
                   x={breakEvenMonth}
-                  stroke="#7c3aed"
+                  stroke="#4f46e5"
                   strokeDasharray="4 4"
                   label={{
                     value: 'Break-even',
-                    fill: '#7c3aed',
+                    fill: '#4f46e5',
                     fontSize: 11,
                     position: 'insideTopLeft',
                   }}
@@ -190,7 +185,7 @@ export function NewProductLaunch({ scenario }) {
                 type="monotone"
                 dataKey="investment"
                 name="Upfront Investment"
-                stroke="#ff8d7b"
+                stroke="#dc2626"
                 strokeWidth={2}
                 dot={false}
               />
@@ -198,7 +193,7 @@ export function NewProductLaunch({ scenario }) {
                 type="monotone"
                 dataKey="cumulativeGp"
                 name="Cumulative Gross Profit"
-                stroke="#8ce99a"
+                stroke="#047857"
                 strokeWidth={2}
                 dot={false}
               />
@@ -212,37 +207,37 @@ export function NewProductLaunch({ scenario }) {
         <div className="h-48">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-              <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+              <CartesianGrid stroke="#dce3eb" strokeDasharray="3 3" />
               <XAxis
                 dataKey="month"
-                stroke="#7f9ab2"
-                tick={{ fill: '#7f9ab2', fontSize: 11 }}
+                stroke="#94a3b8"
+                tick={{ fill: '#64748b', fontSize: 11 }}
                 tickFormatter={(v) => `M${v}`}
                 ticks={ticks}
               />
               <YAxis
-                stroke="#7f9ab2"
-                tick={{ fill: '#7f9ab2', fontSize: 11 }}
+                stroke="#94a3b8"
+                tick={{ fill: '#64748b', fontSize: 11 }}
                 tickFormatter={(v) =>
                   Math.abs(v) >= 1000 ? `$${(v / 1000).toFixed(0)}k` : `$${v}`
                 }
                 width={56}
               />
               <Tooltip
-                contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+                contentStyle={{ background: '#ffffff', border: '1px solid #dce3eb', fontSize: 12, color: '#111827' }}
                 labelFormatter={(v) => `Month ${v}`}
                 formatter={(v, name) => [formatCurrency(v), name]}
               />
               <ReferenceLine
                 x={config.launchMonth}
-                stroke="#f59e0b"
+                stroke="#b45309"
                 strokeDasharray="4 4"
               />
               <Line
                 type="monotone"
                 dataKey="monthlyRevenue"
                 name="Monthly Revenue"
-                stroke="#7dd3fc"
+                stroke="#1d4ed8"
                 strokeWidth={2}
                 dot={false}
               />

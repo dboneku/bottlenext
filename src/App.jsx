@@ -1,46 +1,38 @@
-import { useMemo } from 'react'
 import { useSimulation } from './context/SimulationContext'
 import { useDebouncedEffect } from './hooks/useDebouncedEffect'
-import { ScenarioBar } from './components/scenarios/ScenarioBar'
 import { ConfigPanel } from './components/config/ConfigPanel'
 import { OutputPanel } from './components/simulation/OutputPanel'
 
 export default function App() {
   const { state, dispatch } = useSimulation()
-  const activeScenario = useMemo(
-    () => state.scenarios.find((scenario) => scenario.id === state.activeScenarioId),
-    [state.scenarios, state.activeScenarioId],
-  )
 
   useDebouncedEffect(
     () => {
-      if (activeScenario?.validation.isValid) {
-        dispatch({ type: 'run-simulation', payload: { scenarioId: activeScenario.id } })
+      if (state.validation.isValid) {
+        dispatch({ type: 'run-simulation' })
       }
     },
-    [activeScenario?.config],
+    [state.config],
     450,
   )
 
   return (
-    <div className="min-h-screen px-6 py-6 text-ink">
-      <div className="mx-auto max-w-[1680px] space-y-6">
-        <header className="space-y-2">
-          <p className="font-mono text-xs uppercase tracking-[0.35em] text-accent">BottleNext</p>
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <h1 className="text-4xl font-extrabold tracking-tight">Supply and Demand Bottleneck Simulator</h1>
-              <p className="mt-2 max-w-3xl text-sm text-muted">
-                Scenario-based operational modeling with backlog, bottleneck, hiring, capacity expansion, and financial impact.
+    <div className="min-h-screen px-5 py-8 text-slate-900 md:px-8">
+      <div className="mx-auto max-w-[1520px] space-y-8">
+        <header className="border-b border-line pb-5">
+          <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div className="space-y-2">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-600">BottleNext</p>
+              <h1 className="text-3xl font-semibold tracking-tight text-slate-900">Business Bottleneck Simulator</h1>
+              <p className="max-w-3xl text-sm leading-6 text-slate-600">
+                Enter your current capacity and sales team numbers to find your maximum possible output, what it would be worth, and how long it would take to get there.
               </p>
             </div>
           </div>
         </header>
 
-        <ScenarioBar />
-
-        <main className="grid grid-cols-[420px_minmax(0,1fr)] gap-6">
-          <ConfigPanel onRun={() => dispatch({ type: 'run-simulation', payload: { scenarioId: activeScenario.id } })} />
+        <main className="grid gap-6 xl:grid-cols-[420px_minmax(0,1fr)]">
+          <ConfigPanel />
           <OutputPanel />
         </main>
       </div>

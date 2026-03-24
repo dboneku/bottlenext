@@ -11,8 +11,8 @@ import {
 import { Card } from '../shared/Card'
 import { formatCompactCurrency } from '../../utils/formatters'
 
-const capexColors = ['#f5c451', '#c49e3c', '#e8a820', '#b88c2a', '#d4aa50']
-const headcountColors = ['#81a1ff', '#6681cc', '#9bb5ff', '#5570bb', '#aabfff']
+const capexColors = ['#b45309', '#92400e', '#d97706', '#78350f', '#c07a2a']
+const headcountColors = ['#4f46e5', '#4338ca', '#6366f1', '#3730a3', '#818cf8']
 
 function buildData(scenarios) {
   const maxLen = Math.max(...scenarios.map((s) => s.simulationResult.monthlyData.length))
@@ -41,22 +41,22 @@ export function CostChart({ scenarios }) {
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-            <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+            <CartesianGrid stroke="#dce3eb" strokeDasharray="3 3" />
             <XAxis
               dataKey="month"
-              stroke="#7f9ab2"
-              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              stroke="#94a3b8"
+              tick={{ fill: '#64748b', fontSize: 11 }}
               tickFormatter={(v) => `M${v}`}
               ticks={ticks}
             />
             <YAxis
-              stroke="#7f9ab2"
-              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              stroke="#94a3b8"
+              tick={{ fill: '#64748b', fontSize: 11 }}
               tickFormatter={formatCompactCurrency}
               width={52}
             />
             <Tooltip
-              contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+              contentStyle={{ background: '#ffffff', border: '1px solid #dce3eb', fontSize: 12, color: '#111827' }}
               labelFormatter={(v) => `Month ${v}`}
               formatter={(value, name) => [formatCompactCurrency(value), name]}
             />

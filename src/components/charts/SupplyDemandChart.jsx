@@ -13,7 +13,7 @@ import {
 import { Card } from '../shared/Card'
 import { formatCompactNumber } from '../../utils/formatters'
 
-const palette = ['#7dd3fc', '#f5c451', '#8ce99a', '#ff8d7b', '#81a1ff']
+const palette = ['#1d4ed8', '#b45309', '#047857', '#dc2626', '#4f46e5']
 
 function buildBacklogRanges(monthlyData) {
   const ranges = []
@@ -63,22 +63,22 @@ export function SupplyDemandChart({ scenarios }) {
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={months} margin={{ top: 8, right: 16, left: 0, bottom: 0 }}>
-            <CartesianGrid stroke="#21415b" strokeDasharray="3 3" />
+            <CartesianGrid stroke="#dce3eb" strokeDasharray="3 3" />
             <XAxis
               dataKey="month"
-              stroke="#7f9ab2"
-              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              stroke="#94a3b8"
+              tick={{ fill: '#64748b', fontSize: 11 }}
               tickFormatter={(v) => `M${v}`}
               ticks={ticks}
             />
             <YAxis
-              stroke="#7f9ab2"
-              tick={{ fill: '#7f9ab2', fontSize: 11 }}
+              stroke="#94a3b8"
+              tick={{ fill: '#64748b', fontSize: 11 }}
               tickFormatter={formatCompactNumber}
               width={48}
             />
             <Tooltip
-              contentStyle={{ background: '#10283b', border: '1px solid #21415b', fontSize: 12 }}
+              contentStyle={{ background: '#ffffff', border: '1px solid #dce3eb', fontSize: 12, color: '#111827' }}
               labelFormatter={(v) => `Month ${v}`}
               formatter={(value, name) => [formatCompactNumber(value), name]}
             />
@@ -90,9 +90,9 @@ export function SupplyDemandChart({ scenarios }) {
                 key={`backlog-${i}`}
                 x1={range.x1}
                 x2={range.x2}
-                fill="#ff8d7b"
-                fillOpacity={0.08}
-                stroke="#ff8d7b"
+                fill="#dc2626"
+                fillOpacity={0.06}
+                stroke="#dc2626"
                 strokeOpacity={0.2}
                 ifOverflow="visible"
               />
@@ -105,13 +105,13 @@ export function SupplyDemandChart({ scenarios }) {
                 <ReferenceLine
                   key={`evt-${i}`}
                   x={event.month}
-                  stroke={isDemand ? '#ff8d7b' : '#f5c451'}
+                  stroke={isDemand ? '#dc2626' : '#b45309'}
                   strokeDasharray="4 3"
                   strokeWidth={1.5}
                   label={{
                     value: isDemand ? '▼D' : '▼S',
                     position: 'top',
-                    fill: isDemand ? '#ff8d7b' : '#f5c451',
+                    fill: isDemand ? '#dc2626' : '#b45309',
                     fontSize: 10,
                   }}
                 />

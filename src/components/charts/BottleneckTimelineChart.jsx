@@ -43,7 +43,7 @@ export function BottleneckTimelineChart({ scenario }) {
                   style={{ left: `${pct}%` }}
                 >
                   <div
-                    className={`flex h-5 w-5 items-center justify-center rounded-full border-2 border-bg text-[9px] font-bold ${isDemand ? 'bg-coral text-bg' : 'bg-gold text-bg'}`}
+                    className={`flex h-5 w-5 items-center justify-center rounded-full border-2 border-white text-[9px] font-bold ${isDemand ? 'bg-coral text-white' : 'bg-gold text-white'}`}
                     title={`${event.eventType} — Month ${event.month}`}
                   >
                     {i + 1}
@@ -60,14 +60,14 @@ export function BottleneckTimelineChart({ scenario }) {
               return (
                 <div
                   key={i}
-                  className="grid grid-cols-[1.25rem_5rem_1fr_auto] items-start gap-3 rounded-xl border border-line bg-bg/60 px-4 py-3 text-sm"
+                  className="grid grid-cols-[1.25rem_5rem_1fr_auto] items-start gap-3 rounded-lg border border-line bg-slate-50 px-4 py-3 text-sm"
                 >
                   <span
                     className={`mt-0.5 inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full text-[10px] font-bold ${isDemand ? 'bg-coral/20 text-coral' : 'bg-gold/20 text-gold'}`}
                   >
                     {i + 1}
                   </span>
-                  <span className="font-mono text-xs font-semibold text-muted">{event.dateLabel}</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">{event.dateLabel}</span>
                   <div>
                     <p className={`font-semibold ${isDemand ? 'text-coral' : 'text-gold'}`}>{event.eventType}</p>
                     {event.actionTaken ? <p className="mt-0.5 text-xs text-muted">{event.actionTaken}</p> : null}
