@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F5D78C"/>
+      <stop offset="55%" stop-color="#C9973A"/>
+      <stop offset="100%" stop-color="#9B6E1A"/>
+    </linearGradient>
+  </defs>
+  <!-- Shield background -->
+  <path d="M50 106C50 106 10 90 10 52L10 22L50 14L90 22L90 52C90 90 50 106 50 106Z"
+        fill="#1B1033" stroke="url(#g)" stroke-width="3"/>
+  <!-- Inner bevel -->
+  <path d="M50 97C50 97 18 83 18 52L18 28L50 21L82 28L82 52C82 83 50 97 50 97Z"
+        fill="none" stroke="url(#g)" stroke-width="0.8" opacity="0.4"/>
+  <!-- Scrollwork top -->
+  <path d="M30 14C26 12 22 14 22 17C22 20 28 21 32 17" stroke="url(#g)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <path d="M70 14C74 12 78 14 78 17C78 20 72 21 68 17" stroke="url(#g)" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <circle cx="50" cy="10" r="2.5" fill="url(#g)" opacity="0.9"/>
+  <line x1="50" y1="12.5" x2="50" y2="17" stroke="url(#g)" stroke-width="1.2"/>
+  <!-- AGC monogram -->
+  <text x="50" y="66" text-anchor="middle" fill="url(#g)"
+        font-family="Georgia,serif" font-size="28" font-weight="bold" letter-spacing="-1">AGC</text>
+  <!-- Bottom rule -->
+  <line x1="30" y1="74" x2="70" y2="74" stroke="url(#g)" stroke-width="0.8" opacity="0.5"/>
+</svg>

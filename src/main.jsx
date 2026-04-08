@@ -1,13 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
-import { SimulationProvider } from './context/SimulationContext'
 import './styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <SimulationProvider>
-      <App />
-    </SimulationProvider>
+    <App />
   </React.StrictMode>,
 )
