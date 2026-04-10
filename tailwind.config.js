@@ -4,17 +4,18 @@ export default {
   theme: {
     extend: {
       colors: {
-        bg: '#0F1115',      // Deep dark background
-        panel: '#16191E',   // Slightly lighter panel
-        panelAlt: '#1C2027', // Hover state for panel
-        line: '#2A303C',    // Subtle borders
-        ink: '#F8FAFC',     // Pure text
+        bg: '#0A0E1A',      // Dark Navy
+        panel: '#161E2E',   // Navy Panel
+        panelAlt: '#1F2937', // Slightly lighter navy
+        line: '#2D3748',    // Subtle borders
+        ink: '#E2E8F0',     // Light gray-blue text
         muted: '#94A3B8',   // Muted text
-        accent: '#3B82F6',  // Vivid blue accent
-        gold: '#F59E0B',    // Premium gold accent
+        accent: '#FDFBF7',  // Light Cream White
+        royal: '#1E40AF',   // Royal Blue
+        slate: '#334155',   // Slate
         lime: '#10B981',    // Success
         coral: '#EF4444',   // Error/Alert
-        violet: '#8B5CF6',  // Secondary accent
+        violet: '#6366F1',  // Secondary accent
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],

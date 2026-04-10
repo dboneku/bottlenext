@@ -96,8 +96,8 @@ export function AuthWall({ onAuthSuccess }) {
             background: 'linear-gradient(135deg, var(--ruby) 0%, var(--accent-dim) 100%)',
             display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
             marginBottom: 18,
-            boxShadow: '0 0 30px rgba(201,151,58,0.3), 0 0 60px rgba(155,26,48,0.2)',
-            border: '1px solid rgba(201,151,58,0.2)',
+            boxShadow: '0 0 30px rgba(253,251,247,0.3), 0 0 60px rgba(30,64,175,0.2)',
+            border: '1px solid rgba(253,251,247,0.2)',
             fontSize: 22,
           }}>
             {mode === 'reset' ? '🔑' : '◎'}
@@ -227,8 +227,8 @@ export function AuthWall({ onAuthSuccess }) {
         {mode === 'signup' && (
           <div style={{
             marginTop: 20, padding: '12px 16px',
-            background: 'rgba(201,151,58,0.05)',
-            border: '1px solid rgba(201,151,58,0.12)',
+            background: 'rgba(253,251,247,0.05)',
+            border: '1px solid rgba(253,251,247,0.12)',
             borderRadius: 10, textAlign: 'center',
           }}>
             <p style={{ fontSize: 11, color: 'var(--muted)', margin: 0, lineHeight: 1.6 }}>

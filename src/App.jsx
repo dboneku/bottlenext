@@ -92,8 +92,8 @@ export default function App() {
             width: 48, height: 48, borderRadius: 14,
             background: 'linear-gradient(135deg, var(--ruby) 0%, var(--accent-dim) 100%)',
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 16, fontWeight: 800, color: '#FDEECB',
-            boxShadow: '0 0 30px rgba(201,151,58,0.3)',
+            fontSize: 16, fontWeight: 800, color: '#111827',
+            boxShadow: '0 0 30px rgba(30,64,175,0.3)',
             animation: 'pulse-dot 1.5s ease-in-out infinite',
           }}>AG</div>
           <p style={{ color: 'var(--muted)', fontSize: 13 }}>Loading…</p>
@@ -141,13 +141,13 @@ export default function App() {
         <div style={{
           position: 'absolute', top: '-10%', left: '50%', transform: 'translateX(-50%)',
           width: 800, height: 400, borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(155,26,48,0.15) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(30,64,175,0.15) 0%, transparent 70%)',
           filter: 'blur(40px)',
         }} />
         <div style={{
           position: 'absolute', bottom: '5%', right: '-5%',
           width: 500, height: 500, borderRadius: '50%',
-          background: 'radial-gradient(ellipse, rgba(201,151,58,0.06) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse, rgba(253,251,247,0.06) 0%, transparent 70%)',
           filter: 'blur(60px)',
         }} />
       </div>
@@ -157,7 +157,7 @@ export default function App() {
         position: 'sticky', top: 0, zIndex: 50,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '12px 32px',
-        background: 'rgba(13,6,8,0.85)',
+        background: 'rgba(10,14,26,0.85)',
         backdropFilter: 'blur(16px)',
         borderBottom: '1px solid var(--border)',
       }}>
@@ -173,8 +173,8 @@ export default function App() {
           {completedIds.length > 0 && screen !== 'dashboard' && (
             <button onClick={() => setScreen('dashboard', null)} style={{
               fontSize: 13, padding: '7px 14px',
-              background: 'rgba(201,151,58,0.08)',
-              border: '1px solid rgba(201,151,58,0.2)',
+              background: 'rgba(253,251,247,0.08)',
+              border: '1px solid rgba(253,251,247,0.2)',
               borderRadius: 8, color: 'var(--accent)',
               cursor: 'pointer', fontWeight: 600, fontFamily: 'var(--font)',
             }}>Dashboard</button>

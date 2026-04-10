@@ -53,7 +53,7 @@ function ModuleSection({ moduleId, moduleData, onRedo }) {
             width: 32, height: 32, borderRadius: 9,
             background: `linear-gradient(135deg, ${mod.color} 0%, ${mod.color}88 100%)`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: 14, color: '#FDEECB',
+            fontSize: 14, color: '#111827',
             boxShadow: `0 0 12px ${mod.glow}`,
           }}>{mod.icon}</div>
           <div>
@@ -134,9 +134,9 @@ export function CompanyDashboard({ data, completedIds, onRedo, onClose }) {
           <button onClick={() => setShowOpsp(true)} style={{
             display: 'flex', alignItems: 'center', gap: 8,
             fontSize: 13, padding: '10px 18px',
-            background: 'var(--panel)', border: '1px solid rgba(201,151,58,0.3)',
+            background: 'var(--panel)', border: '1px solid rgba(253,251,247,0.3)',
             borderRadius: 10, color: 'var(--accent)', cursor: 'pointer', fontFamily: 'var(--font)',
-            boxShadow: '0 4px 12px rgba(201,151,58,0.1)'
+            boxShadow: '0 4px 12px rgba(253,251,247,0.1)'
           }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="6 9 6 2 18 2 18 9"/>
@@ -174,8 +174,8 @@ export function CompanyDashboard({ data, completedIds, onRedo, onClose }) {
       <div style={{
         marginTop: 16,
         padding: '22px 28px',
-        background: 'rgba(201,151,58,0.05)',
-        border: '1px solid rgba(201,151,58,0.15)',
+        background: 'rgba(253,251,247,0.05)',
+        border: '1px solid rgba(253,251,247,0.15)',
         borderRadius: 16,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         flexWrap: 'wrap', gap: 16,
@@ -186,8 +186,8 @@ export function CompanyDashboard({ data, completedIds, onRedo, onClose }) {
         </div>
         <button onClick={onClose} style={{
           padding: '10px 20px',
-          background: 'linear-gradient(135deg, rgba(201,151,58,0.15) 0%, rgba(201,151,58,0.05) 100%)',
-          border: '1px solid rgba(201,151,58,0.25)',
+          background: 'linear-gradient(135deg, rgba(253,251,247,0.15) 0%, rgba(253,251,247,0.05) 100%)',
+          border: '1px solid rgba(253,251,247,0.25)',
           borderRadius: 10, color: 'var(--accent)',
           fontSize: 13, fontWeight: 700,
           cursor: 'pointer', fontFamily: 'var(--font)',

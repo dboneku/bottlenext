@@ -98,7 +98,7 @@ function ModuleCard({ module, status, moduleData, onStart, index }) {
             fontSize: 20,
             boxShadow: isComplete ? `0 0 16px ${module.glow}` : 'none',
           }}>
-            <span style={{ color: isComplete ? '#FDEECB' : isUnlocked ? module.color : 'var(--muted)' }}>
+            <span style={{ color: isComplete ? '#111827' : isUnlocked ? module.color : 'var(--muted)' }}>
               {module.icon}
             </span>
           </div>
@@ -113,7 +113,7 @@ function ModuleCard({ module, status, moduleData, onStart, index }) {
             background: isComplete
               ? `${module.color}22`
               : isUnlocked
-              ? 'rgba(201,151,58,0.12)'
+              ? 'rgba(253,251,247,0.12)'
               : isComingSoon
               ? 'rgba(100,100,100,0.12)'
               : 'rgba(100,100,100,0.08)',
@@ -122,7 +122,7 @@ function ModuleCard({ module, status, moduleData, onStart, index }) {
               : isUnlocked
               ? 'var(--accent)'
               : 'var(--muted)',
-            border: `1px solid ${isComplete ? module.color + '33' : isUnlocked ? 'rgba(201,151,58,0.2)' : 'var(--border)'}`,
+            border: `1px solid ${isComplete ? module.color + '33' : isUnlocked ? 'rgba(253,251,247,0.2)' : 'var(--border)'}`,
           }}>
             {isComplete && <><CheckIcon /> Complete</>}
             {isUnlocked && <>Start</>}
@@ -203,16 +203,16 @@ export function HomeScreen({ data, completedIds, isLoggedIn, onStartModule, onVi
               onClick={onViewDashboard}
               style={{
                 padding: '12px 22px',
-                background: 'linear-gradient(135deg, rgba(201,151,58,0.15) 0%, rgba(201,151,58,0.05) 100%)',
-                border: '1px solid rgba(201,151,58,0.3)',
+                background: 'linear-gradient(135deg, rgba(253,251,247,0.15) 0%, rgba(253,251,247,0.05) 100%)',
+                border: '1px solid rgba(253,251,247,0.3)',
                 borderRadius: 12, color: 'var(--accent)',
                 fontSize: 14, fontWeight: 700,
                 cursor: 'pointer', fontFamily: 'var(--font)',
                 display: 'flex', alignItems: 'center', gap: 8,
                 transition: 'all 0.2s',
               }}
-              onMouseEnter={e => e.currentTarget.style.background = 'linear-gradient(135deg, rgba(201,151,58,0.22) 0%, rgba(201,151,58,0.1) 100%)'}
-              onMouseLeave={e => e.currentTarget.style.background = 'linear-gradient(135deg, rgba(201,151,58,0.15) 0%, rgba(201,151,58,0.05) 100%)'}
+              onMouseEnter={e => e.currentTarget.style.background = 'linear-gradient(135deg, rgba(253,251,247,0.22) 0%, rgba(253,251,247,0.1) 100%)'}
+              onMouseLeave={e => e.currentTarget.style.background = 'linear-gradient(135deg, rgba(253,251,247,0.15) 0%, rgba(253,251,247,0.05) 100%)'}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>
               View Dashboard
@@ -234,7 +234,7 @@ export function HomeScreen({ data, completedIds, isLoggedIn, onStartModule, onVi
                 background: 'linear-gradient(90deg, var(--ruby), var(--accent))',
                 borderRadius: 9999,
                 transition: 'width 0.8s ease',
-                boxShadow: '0 0 10px rgba(201,151,58,0.4)',
+                boxShadow: '0 0 10px rgba(253,251,247,0.4)',
               }} />
             </div>
           </div>

@@ -8,8 +8,8 @@ export const MODULES = [
     subtitle: 'Foundation · Layer 1',
     tagline: 'Why you exist',
     description: 'Craft a clear, simple mission statement that defines your organization\'s purpose and impact.',
-    color: '#C41F3B',
-    glow: 'rgba(196,31,59,0.25)',
+    color: '#9B1A30',
+    glow: 'rgba(155,26,48,0.25)',
     icon: '◎',
     questions: [
       {
@@ -47,8 +47,8 @@ export const MODULES = [
     subtitle: 'Foundation · Layer 2',
     tagline: 'Where you\'re going',
     description: 'Define the 3-5 year picture of your future. A vivid, concrete vision that pulls your team forward.',
-    color: '#C9973A',
-    glow: 'rgba(201,151,58,0.25)',
+    color: '#A8855A',
+    glow: 'rgba(168,133,90,0.25)',
     icon: '◈',
     questions: [
       {
@@ -81,8 +81,8 @@ export const MODULES = [
     subtitle: 'Execution · Layer 3',
     tagline: 'How you\'ll win',
     description: 'Define your strategic anchors and top priorities to turn your vision into reality.',
-    color: '#7B3FA0',
-    glow: 'rgba(123,63,160,0.25)',
+    color: '#6D4C8C',
+    glow: 'rgba(109,76,140,0.25)',
     icon: '◇',
     questions: [
       {
@@ -110,8 +110,8 @@ export const MODULES = [
     subtitle: 'People · Layer 4',
     tagline: 'Right seats, right outcomes',
     description: 'Build your accountability chart and map clear outcomes for every role in the business.',
-    color: '#3B82F6',
-    glow: 'rgba(59,130,246,0.25)',
+    color: '#3B5281',
+    glow: 'rgba(59,82,129,0.25)',
     icon: '◐',
     questions: [
       {
@@ -139,8 +139,8 @@ export const MODULES = [
     subtitle: 'Rhythm · Layer 5',
     tagline: 'Execution & Scoreboards',
     description: 'Establish the scoreboard and meeting rhythm that drives disciplined execution.',
-    color: '#10B981',
-    glow: 'rgba(16,185,129,0.25)',
+    color: '#4C8C77',
+    glow: 'rgba(76,140,119,0.25)',
     icon: '◆',
     questions: [
       {
@@ -168,8 +168,8 @@ export const MODULES = [
     subtitle: 'Culture · Layer 6',
     tagline: 'How you behave',
     description: 'Identify the 3-5 core values that define your culture and guide every decision.',
-    color: '#F59E0B',
-    glow: 'rgba(245,158,11,0.25)',
+    color: '#A8855A',
+    glow: 'rgba(168,133,90,0.25)',
     icon: '◈',
     comingSoon: true,
   },

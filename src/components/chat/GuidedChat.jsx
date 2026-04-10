@@ -8,7 +8,7 @@ const formatText = (text) =>
       <span key={i} style={{ display: 'block', marginBottom: i < arr.length - 1 ? '4px' : 0 }}>
         {parts.map((p, j) =>
           p.startsWith('**') && p.endsWith('**')
-            ? <strong key={j} style={{ color: '#F5D78C', fontWeight: 700 }}>{p.slice(2, -2)}</strong>
+            ? <strong key={j} style={{ color: '#FDFBF7', fontWeight: 700 }}>{p.slice(2, -2)}</strong>
             : p
         )}
       </span>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 110" fill="none">
+  <path
+    d="M50 106 C50 106 10 90 10 52 L10 22 L50 14 L90 22 L90 52 C90 90 50 106 50 106Z"
+    fill="white"
+  />
+  <text
+    x="50"
+    y="66"
+    text-anchor="middle"
+    fill="black"
+    font-family="Georgia, serif"
+    font-size="28"
+    font-weight="bold"
+    letter-spacing="-1"
+  >
+    AGC
+  </text>
+</svg>

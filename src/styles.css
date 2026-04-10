@@ -4,19 +4,19 @@
 
 /* ─── VELVET GOLD DESIGN SYSTEM ─── */
 :root {
-  --bg:         #0D0608;
-  --bg2:        #130A0D;
-  --panel:      #1A0E12;
-  --panel-alt:  #221218;
-  --border:     #3D1E28;
-  --border-glow: #7C2D44;
-  --ink:        #F5ECD7;
-  --muted:      #A8855A;
-  --accent:     #C9973A;   /* gold */
-  --accent-dim: #8B5E1A;
-  --ruby:       #9B1A30;
-  --ruby-bright:#C41F3B;
-  --violet:     #7B3FA0;
+  --bg:         #0A0E1A;
+  --bg2:        #111827;
+  --panel:      #161E2E;
+  --panel-alt:  #1F2937;
+  --border:     #2D3748;
+  --border-glow: #3E5281;
+  --ink:        #E2E8F0;
+  --muted:      #94A3B8;
+  --accent:     #FDFBF7;   /* Light Cream White */
+  --accent-dim: #D1D5DB;
+  --ruby:       #1E40AF;   /* Royal Blue */
+  --ruby-bright:#3B82F6;
+  --violet:     #6366F1;
   --success:    #10B981;
   --font: 'Inter', sans-serif;
 }
@@ -35,16 +35,19 @@ body {
   font-family: var(--font);
   background-color: var(--bg);
   color: var(--ink);
-  /* Subtle burgundy vignette glow from center */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Subtle navy vignette glow from center */
   background-image:
-    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(155, 26, 48, 0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(201, 151, 58, 0.07) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(30, 64, 175, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(253, 251, 247, 0.05) 0%, transparent 60%);
   background-attachment: fixed;
 }
 
 ::selection {
-  background: rgba(201, 151, 58, 0.3);
-  color: #F5ECD7;
+  background: rgba(253, 251, 247, 0.2);
+  color: #FDFBF7;
 }
 
 ::-webkit-scrollbar { width: 6px; }
@@ -63,9 +66,9 @@ body {
 .border-app   { border: 1px solid var(--border); }
 .border-glow  { border: 1px solid var(--border-glow); }
 
-/* ─── GOLD GRADIENT TEXT ─── */
+/* ─── WARM BRONZE GRADIENT TEXT ─── */
 .gold-gradient {
-  background: linear-gradient(135deg, #F5D78C 0%, #C9973A 45%, #9B6E1A 100%);
+  background: linear-gradient(135deg, #E2B07E 0%, #B68D5D 45%, #8B6B43 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -92,9 +95,9 @@ body {
   border: 1px solid var(--border);
   border-radius: 20px;
   box-shadow:
-    0 0 0 1px rgba(201,151,58,0.06),
+    0 0 0 1px rgba(253,251,247,0.06),
     0 20px 60px rgba(0,0,0,0.6),
-    0 0 80px rgba(155,26,48,0.06) inset;
+    0 0 80px rgba(30,64,175,0.06) inset;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -105,7 +108,7 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 18px 24px;
-  background: linear-gradient(135deg, rgba(30,10,16,0.9) 0%, rgba(26,14,18,0.95) 100%);
+  background: linear-gradient(135deg, rgba(16,24,40,0.9) 0%, rgba(22,30,46,0.95) 100%);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(12px);
 }
@@ -116,9 +119,9 @@ body {
   background: linear-gradient(135deg, var(--ruby) 0%, var(--accent-dim) 100%);
   display: flex; align-items: center; justify-content: center;
   font-weight: 800; font-size: 13px; letter-spacing: 0.05em;
-  color: #FDEECB;
-  box-shadow: 0 0 18px rgba(201,151,58,0.35);
-  border: 1px solid rgba(201,151,58,0.25);
+  color: #111827;
+  box-shadow: 0 0 18px rgba(30,64,175,0.35);
+  border: 1px solid rgba(253,251,247,0.25);
 }
 
 .chat-messages {
@@ -148,11 +151,11 @@ body {
 }
 
 .msg-user {
-  background: linear-gradient(135deg, var(--ruby) 0%, #7A1527 100%);
-  color: #FDEECB;
+  background: linear-gradient(135deg, var(--ruby) 0%, #1E3A8A 100%);
+  color: #FDFBF7;
   border-bottom-right-radius: 4px;
   align-self: flex-end;
-  box-shadow: 0 4px 20px rgba(155,26,48,0.4);
+  box-shadow: 0 4px 20px rgba(30,64,175,0.4);
 }
 
 .chat-input-area {
@@ -173,7 +176,7 @@ body {
 }
 .chat-input-wrap:focus-within {
   border-color: var(--accent-dim);
-  box-shadow: 0 0 0 2px rgba(201,151,58,0.12);
+  box-shadow: 0 0 0 2px rgba(253,251,247,0.12);
 }
 
 .chat-textarea {
@@ -200,12 +203,12 @@ body {
   display: flex; align-items: center; justify-content: center;
   transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dim) 100%);
-  color: #1A0E12;
-  box-shadow: 0 4px 14px rgba(201,151,58,0.35);
+  color: #0A0E1A;
+  box-shadow: 0 4px 14px rgba(253,251,247,0.25);
 }
 .send-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #F5D78C 0%, var(--accent) 100%);
-  box-shadow: 0 6px 20px rgba(201,151,58,0.5);
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--accent) 100%);
+  box-shadow: 0 6px 20px rgba(253,251,247,0.4);
   transform: translateY(-1px);
 }
 .send-btn:active:not(:disabled) { transform: translateY(0); }
@@ -220,9 +223,9 @@ body {
   max-width: 440px;
   width: 100%;
   box-shadow:
-    0 0 0 1px rgba(201,151,58,0.06),
+    0 0 0 1px rgba(253,251,247,0.06),
     0 30px 80px rgba(0,0,0,0.7),
-    0 0 100px rgba(155,26,48,0.08) inset;
+    0 0 100px rgba(30,64,175,0.08) inset;
 }
 
 .auth-input {
@@ -240,28 +243,28 @@ body {
 }
 .auth-input:focus {
   border-color: var(--accent-dim);
-  box-shadow: 0 0 0 3px rgba(201,151,58,0.12);
+  box-shadow: 0 0 0 3px rgba(253,251,247,0.12);
 }
 .auth-input::placeholder { color: var(--muted); }
 
 .gold-btn {
   width: 100%;
   padding: 14px;
-  background: linear-gradient(135deg, #D4A84B 0%, #9B6E1A 100%);
+  background: linear-gradient(135deg, #FDFBF7 0%, #D1D5DB 100%);
   border: none;
   border-radius: 12px;
-  color: #1A0E12;
+  color: #0A0E1A;
   font-weight: 700;
   font-size: 15px;
   font-family: var(--font);
   cursor: pointer;
   transition: all 0.2s;
-  box-shadow: 0 4px 20px rgba(201,151,58,0.4);
+  box-shadow: 0 4px 20px rgba(253,251,247,0.25);
   letter-spacing: 0.02em;
 }
 .gold-btn:hover:not(:disabled) {
-  background: linear-gradient(135deg, #F5D78C 0%, #C9973A 100%);
-  box-shadow: 0 6px 28px rgba(201,151,58,0.55);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FDFBF7 100%);
+  box-shadow: 0 6px 28px rgba(253,251,247,0.4);
   transform: translateY(-1px);
 }
 .gold-btn:disabled { opacity: 0.5; cursor: not-allowed; }
@@ -281,7 +284,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201,151,58,0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(253,251,247,0.3), transparent);
 }
 
 /* ─── ONLINE DOT ─── */
